@@ -1,0 +1,97 @@
+﻿@model List<Employee>
+
+<h1 class="alert alert-success text-center">Employees Index</h1>
+
+<a asp-controller="Employees" asp-action="GetCreateView" class="btn btn-success">
+    Create New
+</a>
+
+@if (Model.Any())
+{
+    <form method="get" asp-controller="Employees" asp-action="GetIndexView" class="col-4">
+        <div class="input-group">
+			<input type="text" name="search" class="form-control" value="@ViewBag.CurrentSearch"/>
+			<button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+        </div>
+    </form>
+    
+    <table class="table table-bordered text-center table-hover">
+        <caption class="caption-top text-center fs-3">All Employees</caption>
+        <thead class="table-dark">
+            <tr><th>Id</th><th>Full Name</th><th>Position</th><th>Salary</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.FullName</td>
+                    <td>@employee.Position</td>
+                    <td>@employee.Salary</td>
+                    <td>
+                        <a asp-controller="Employees" asp-action="GetDetailsView" 
+                           asp-route-id="@employee.Id" class="btn btn-outline-secondary">
+                           <i class="bi bi-list-ul"></i>
+
+                        </a>
+                        <a asp-controller="Employees" asp-action="GetEditView"
+                           asp-route-id="@employee.Id" class="btn btn-outline-primary">
+                           <i class="bi bi-pencil-square"></i>
+  
+                        </a>
+                        <a asp-controller="Employees" asp-action="GetDeleteView"
+                           asp-route-id="@employee.Id" class="btn btn-outline-danger">
+                            <i class="bi bi-trash"></i>
+
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr><th colspan="3" style="text-align:right">Total Salaries</th><th>@Model.Sum(e => e.Salary)</th></tr>
+        </tfoot>
+    </table>
+
+    @foreach (var employee in Model)
+    {
+        <div class="card text-center mt-3" style="display:inline-block; width:18rem">
+            <div class="card-header">@employee.FullName</div>
+            <div class="card-body">
+                <h5>@employee.Position</h5>
+                <p>@employee.HiringDateAndTime</p>
+            </div>
+            <div class="card-footer">@employee.Salary</div>
+        </div>
+    }
+
+    @foreach (var employee in Model)
+    {
+        <div class="card text-center mt-3 bg-primary text-white" style="display:inline-block; width:18rem">
+            <div class="card-header">@employee.FullName</div>
+            <div class="card-body">
+                <h5>@employee.Position</h5>
+                <p>@employee.HiringDateAndTime</p>
+            </div>
+            <div class="card-footer">@employee.Salary</div>
+        </div>
+    }
+
+    @foreach (var employee in Model)
+    {
+        <div class="card text-center mt-3 bg-transparent border-success" style="display:inline-block; width:18rem">
+            <div class="card-header bg-transparent border-success">@employee.FullName</div>
+            <div class="card-body bg-transparent border-success">
+                <h5>@employee.Position</h5>
+                <p>@employee.HiringDateAndTime</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">@employee.Salary</div>
+        </div>
+    }
+}
+else
+{
+    <h2 class="alert alert-danger text-center">There is no employee to display.</h2>
+}
+
+

@@ -1,0 +1,73 @@
+﻿@model Employee
+
+<h1 class="alert alert-warning text-center">Create New Employee</h1>
+
+<form method="post" asp-controller="Employees" asp-action="AddNew" class="col-4">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div>
+        <label asp-for="FullName" class="form-label">Full Name</label>
+        <input type="text" asp-for="FullName" class="form-control"/>
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="NationalId" class="form-label">National Id</label>
+        <input type="text" asp-for="NationalId" class="form-control" />
+        <span asp-validation-for="NationalId" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="PhoneNo" class="form-label">Phone No</label>
+        <input type="text" asp-for="PhoneNo" class="form-control" />
+        <span asp-validation-for="PhoneNo" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Position" class="form-label">Position</label>
+        <input type="text" asp-for="Position" class="form-control" />
+        <span asp-validation-for="Position" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Salary" class="form-label">Salary</label>
+        <input type="number" asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="DateOfBirth" class="form-label">Date of Birth</label>
+        <input asp-for="DateOfBirth" class="form-control" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="HiringDateAndTime" class="form-label">Hiring Date and Time</label>
+        <input asp-for="HiringDateAndTime" class="form-control" />
+        <span asp-validation-for="HiringDateAndTime" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="AttendanceTime" class="form-label">Attendance Time</label>
+        <input asp-for="AttendanceTime" class="form-control" />
+        <span asp-validation-for="AttendanceTime" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="LeaveTime" class="form-label">Leave Time</label>
+        <input asp-for="LeaveTime" class="form-control" />
+        <span asp-validation-for="LeaveTime" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Email" class="form-label">Email</label>
+        <input type="text" asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Password" class="form-label">Password</label>
+        <input type="Password" asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="IsActive" class="form-label">IsActive</label>
+        <input type="checkbox" asp-for="IsActive"/>
+        <span asp-validation-for="IsActive" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary col-12">Add</button>
+</form>
+
+
+
+

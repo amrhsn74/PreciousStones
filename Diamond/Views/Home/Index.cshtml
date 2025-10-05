@@ -1,0 +1,46 @@
+﻿<!--HTML Comment-->
+<h1 style="background-color:beige;color:darkblue;text-align:center">
+    Welcome to Precious Stones Solution
+</h1>
+
+<h1 class="alert alert-success text-center">
+    Hi from Diamond Project
+</h1>
+
+@*Razor Comment*@
+
+@*C# Code Block*@
+@{
+    //C# Comment
+    const string company = "Precious Stones Co.";
+    string manager = "Amr Nagy";
+    string GreetVisitor() => "Welcome to our company application!";
+}
+
+@*Inline Code*@
+<h2 class="alert alert-info">@company</h2>
+<h2 class="alert alert-primary">@manager</h2>
+<h2 class="alert alert-secondary">@company's Manager: @manager</h2>
+<h2 class="alert alert-warning">@GreetVisitor()</h2>
+<h2 class="alert alert-danger">@DateTime.Now</h2>
+<h2 class="alert alert-dark text-white">@(20 + 5 * 7)</h2>
+
+@{
+    int currentHour = DateTime.Now.Hour;
+    // int currentHour = 11;
+}
+
+@if (currentHour >= 4 && currentHour < 12)
+{
+    <h3 class="alert alert-success text-center text-capitalize m-3">Good morning</h3>
+}
+else if (currentHour >= 12 && currentHour < 19)
+{
+    <h3 class="alert alert-warning text-center text-lowercase m-3">Good afternoon</h3>
+}
+else
+{
+    <h3 class="alert alert-dark text-white text-center text-uppercase m-3">Good evening</h3>
+}
+
+

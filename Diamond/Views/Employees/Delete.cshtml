@@ -1,0 +1,56 @@
+﻿@model Employee
+
+<h1 class="alert alert-danger text-center">
+    Are you sure you want to delete this?
+</h1>
+
+<dl class="row">
+    <dt class="col-2">Id</dt>
+    <dd class="col-10">@Model.Id</dd>
+
+    <dt class="col-2">Full Name</dt>
+    <dd class="col-10">@Model.FullName</dd>
+
+    <dt class="col-2">National Id</dt>
+    <dd class="col-10">@Model.NationalId</dd>
+
+    <dt class="col-2">Phone No</dt>
+    <dd class="col-10">@Model.PhoneNo</dd>
+
+    <dt class="col-2">Position</dt>
+    <dd class="col-10">@Model.Position</dd>
+
+    <dt class="col-2">Date of Birth</dt>
+    <dd class="col-10">@Model.DateOfBirth</dd>
+
+    <dt class="col-2">Hiring Date and Time</dt>
+    <dd class="col-10">@Model.HiringDateAndTime</dd>
+
+    <dt class="col-2">Attendance Time</dt>
+    <dd class="col-10">@Model.AttendanceTime</dd>
+
+    <dt class="col-2">Leave Time</dt>
+    <dd class="col-10">@Model.LeaveTime</dd>
+
+    <dt class="col-2">Email</dt>
+    <dd class="col-10">@Model.Email</dd>
+
+    <dt class="col-2">Password</dt>
+    <dd class="col-10">@Model.Password</dd>
+
+    <dt class="col-2">Is Active</dt>
+    <dd class="col-10">@Model.IsActive</dd>
+    
+    <dt class="col-2">Department</dt>
+    <dd class="col-10">@Model.Department.Name (@Model.Department.Description)</dd>
+</dl>
+
+<form method="post" asp-controller="Employees" asp-action="DeleteCurrent">
+    <input type="hidden" asp-for="Id"/>
+    <button type="submit" class="btn btn-danger col-4 fw-bold">Delete</button>
+</form>
+
+<a asp-controller="Employees" asp-action="GetIndexView"
+   class="btn btn-primary col-4 fw-bold mt-1">
+    Back to List
+</a>
