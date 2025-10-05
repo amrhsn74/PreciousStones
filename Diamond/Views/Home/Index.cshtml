@@ -23,7 +23,6 @@
 <h2 class="alert alert-secondary">@company's Manager: @manager</h2>
 <h2 class="alert alert-warning">@GreetVisitor()</h2>
 <h2 class="alert alert-danger">@DateTime.Now</h2>
-<h2 class="alert alert-dark text-white">@(20 + 5 * 7)</h2>
 
 @{
     int currentHour = DateTime.Now.Hour;
@@ -32,15 +31,16 @@
 
 @if (currentHour >= 4 && currentHour < 12)
 {
-    <h3 class="alert alert-success text-center text-capitalize m-3">Good morning</h3>
+    <h2 class="alert alert-success text-center text-capitalize m-3">Good morning</h2>
 }
 else if (currentHour >= 12 && currentHour < 19)
 {
-    <h3 class="alert alert-warning text-center text-lowercase m-3">Good afternoon</h3>
+    <h2 class="alert alert-warning text-center text-lowercase m-3">Good afternoon</h2>
 }
 else
 {
-    <h3 class="alert alert-dark text-white text-center text-uppercase m-3">Good evening</h3>
+    <h2 class="alert alert-dark text-white text-center text-uppercase m-3">Good evening</h2>
 }
+
 
 
